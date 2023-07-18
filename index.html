@@ -14,7 +14,14 @@
     <a-scene physics>
       <!-- Assets -->
       <a-assets>
+        <img id="sky" src="./img/sky.jpg" />
         <img id="texture" src="./img/floor.jpg" />
+
+        <a-asset-item
+          id="factory-gltf"
+          src="./models/Factory2.gltf"
+        ></a-asset-item>
+
         <a-mixin
           id="cube"
           geometry="primitive: box; width: 0.33; height: 0.33; depth: 0.33"
@@ -42,7 +49,7 @@
       </a-assets>
 
       <!-- Player -->
-      <a-entity>
+      <a-entity position="5 0 -5" rotation="0 180">
         <!-- Camera -->
         <a-camera
           look-controls="enabled: true; pointerLockEnabled: true; hmdEnabled: true; magicWindowTrackingEnabled: true; pointerLockEnabled: true; reverseMouseDrag: false; reverseTouchDrag: false; rotateSensitivity: 1; snap: false; touchEnabled: true; touchSensitivity: 1; touchSwipeEnabled: true; touchSwipeVelocity: 0.5; wasdEnabled: false"
@@ -59,35 +66,43 @@
       <a-entity
         class="cube"
         mixin="cube"
-        position="0 0.265 -0.5"
+        position="4 0.5 -0.5"
         material="color: red"
       ></a-entity>
       <a-entity
         class="cube"
         mixin="cube"
-        position="-1 0.265 -0.5"
+        position="5 0.5 -0.5"
         material="color: blue"
       ></a-entity>
       <a-entity
         class="cube"
         mixin="cube"
-        position="1 0.265 -0.5"
+        position="6 0.5 -0.5"
         material="color: green"
       ></a-entity>
 
       <!-- Floor -->
       <a-plane
-        src="#texture"
-        repeat="4 4"
         rotation="-90 0 0"
-        position="0 0 0"
-        width="20"
-        height="20"
+        position="0 0.265 0"
+        width="300"
+        height="300"
+        visible="false"
         static-body
       ></a-plane>
 
       <!-- Background (Skybox) -->
-      <a-sky color="#333"></a-sky>
+      <a-sky src="#sky"></a-sky>
+
+      <!-- Factory -->
+      <a-entity
+        id="#factory"
+        position="0 0 0"
+        gltf-model="#factory-gltf"
+        scale="1.0 1.0 1.0"
+      >
+      </a-entity>
     </a-scene>
   </body>
 </html>
