@@ -4,6 +4,6 @@
     "http-server": "^14.1.1"
   },
   "scripts": {
-    "start": "http-server -S -C C:\\Users\\geova\\OneDrive\\Documentos\\repos\\A-frame\\mecanic_test\\server.crt -K C:\\Users\\geova\\OneDrive\\Documentos\\repos\\A-frame\\mecanic_test\\server.key"
+    "start": "http-server -S -C \"C:\\Users\\Geovane - EDGE\\Documents\\repos\\vr-grab-laboratory\\server.crt\" -K \"C:\\Users\\Geovane - EDGE\\Documents\\repos\\vr-grab-laboratory\\server.key\""
   }
 }
